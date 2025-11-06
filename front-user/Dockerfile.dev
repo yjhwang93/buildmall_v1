@@ -1,0 +1,23 @@
+# Next.js 개발 환경 Dockerfile
+FROM node:20-alpine
+
+WORKDIR /app
+
+# 패키지 매니저 캐시 설정
+RUN npm config set cache /tmp/.npm
+
+# package.json과 package-lock.json 복사 (의존성 설치를 위해)
+COPY package.json package-lock.json* ./
+
+# 의존성 설치
+RUN npm install
+
+# 소스 코드 복사
+COPY . .
+
+# 포트 노출
+EXPOSE 3000
+
+# 개발 서버 실행
+CMD ["npm", "run", "dev"]
+

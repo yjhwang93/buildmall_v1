@@ -1,0 +1,98 @@
+import { Category } from '@/lib/types/api'
+
+export const mockCategories: Category[] = [
+  {
+    id: '1',
+    name: '시멘트/콘크리트',
+    slug: 'cement-concrete',
+    description: '시멘트 및 콘크리트 관련 자재',
+    parentId: undefined,
+    order: 1,
+    level: 1,
+  },
+  {
+    id: '2',
+    name: '철근/철골',
+    slug: 'rebar-steel',
+    description: '철근 및 철골 관련 자재',
+    parentId: undefined,
+    order: 2,
+    level: 1,
+  },
+  {
+    id: '3',
+    name: '벽돌/블록',
+    slug: 'brick-block',
+    description: '벽돌 및 블록 관련 자재',
+    parentId: undefined,
+    order: 3,
+    level: 1,
+  },
+  {
+    id: '4',
+    name: '타일/석재',
+    slug: 'tile-stone',
+    description: '타일 및 석재 관련 자재',
+    parentId: undefined,
+    order: 4,
+    level: 1,
+  },
+  {
+    id: '5',
+    name: '목재/합판',
+    slug: 'wood-plywood',
+    description: '목재 및 합판 관련 자재',
+    parentId: undefined,
+    order: 5,
+    level: 1,
+  },
+  {
+    id: '6',
+    name: '방수/단열재',
+    slug: 'waterproof-insulation',
+    description: '방수 및 단열재 관련 자재',
+    parentId: undefined,
+    order: 6,
+    level: 1,
+  },
+  {
+    id: '7',
+    name: '도배/페인트',
+    slug: 'wallpaper-paint',
+    description: '도배 및 페인트 관련 자재',
+    parentId: undefined,
+    order: 7,
+    level: 1,
+  },
+  {
+    id: '8',
+    name: '전기/조명',
+    slug: 'electrical-lighting',
+    description: '전기 및 조명 관련 자재',
+    parentId: undefined,
+    order: 8,
+    level: 1,
+  },
+  {
+    id: '9',
+    name: '수도/배관',
+    slug: 'plumbing',
+    description: '수도 및 배관 관련 자재',
+    parentId: undefined,
+    order: 9,
+    level: 1,
+  },
+  {
+    id: '10',
+    name: '건축자재 기타',
+    slug: 'others',
+    description: '기타 건축자재',
+    parentId: undefined,
+    order: 10,
+    level: 1,
+  },
+]
+
+
+
+

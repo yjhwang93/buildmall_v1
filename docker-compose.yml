@@ -1,0 +1,49 @@
+services:
+  front-user:
+    build:
+      context: ./front-user
+      dockerfile: Dockerfile.dev
+    container_name: buildmall_front_user
+    ports:
+      - "4710:3000"
+    volumes:
+      - ./front-user:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+      - NEXT_PUBLIC_USE_MOCK_API=true
+      - HOSTNAME=0.0.0.0
+      - PORT=3000
+    env_file:
+      - ./front-user/.env.local
+    # .env.local 파일이 없어도 실행되도록 설정
+    command: npm run dev
+    restart: unless-stopped
+    networks:
+      - buildmall-network
+
+  # 프로덕션 빌드 서비스 (사용 예: docker compose up front-user-build --build)
+  front-user-build:
+    build:
+      context: ./front-user
+      dockerfile: Dockerfile
+      target: builder
+    container_name: buildmall_front_user_builder
+    profiles:
+      - build
+    command: npm run build
+    volumes:
+      - ./front-user:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - buildmall-network
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+
+networks:
+  buildmall-network:
+    driver: bridge

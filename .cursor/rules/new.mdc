@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+기본 UI : GNB, LNB, Footer 는 index.php 와 동일
